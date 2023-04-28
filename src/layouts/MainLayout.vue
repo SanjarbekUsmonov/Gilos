@@ -2,18 +2,20 @@
   <q-layout view="hHh lpR fFf">
 
 
-      <q-header reveal  bordered class=" header bg-white text-white">
+      <q-header reveal
+        bordered
+        class=" header bg-deep-purple-11 ">
       <q-toolbar>
         <q-toolbar-title class="row justify-between items-center">
-          <router-link to="/" class="black text-h5 text-weight-bold">Gilos</router-link>
+          <router-link to="/" class="black text-h5 text-weight-bold">Gilos.Market</router-link>
         <router-link to="/search" >
-          <q-input class="input" v-model="search" outlined type="search" >
+          <q-input v-model="search" filled type="search" class="input_header"  bg-color="indigo-1"  color="white">
           <template v-slot:append>
           <q-icon name="search" />
         </template>
          </q-input>
         </router-link>
-          <q-btn flat round icon="event" color="black"/>
+          <q-btn flat round icon="event" color="white"/>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -27,10 +29,6 @@
 
 
 
-    <q-footer  class="bg-grey-8 text-white">
-
-    </q-footer>
-
   </q-layout>
 </template>
 
@@ -40,14 +38,16 @@ let search = ref('')
 </script>
 <style scoped>
 .header{
-  width: 90%;
+  width: 94%;
   margin: 0 auto;
 }
 .black{
-color: black;
+ color: white;
 }
-.input{
+.input_header{
   width: 400px;
+  margin: 10px;
 }
+
 
 </style>
