@@ -9,29 +9,26 @@
        <div class="q-pa-md">
         <div>
           <div class="row no-wrap items-center">
-            <div class="col text-h6 ellipsis">Ko'ylak</div>
+            <div class="col text-h6 ellipsis" style="font-weight: 700;">Ko'ylak</div>
           </div>
-
           <q-rating v-model="stars" :max="5" size="22px"/>
         </div>
 
-        <div class="q-pt-none">
-          <div  class="q-mt-md" style="font-weight: 600;">5000</div>
-          <div class="text-caption text-grey">
-            300000
-          </div>
+        <div>
+          <div style="font-weight: 600;" class="text-grey-7">Lorem ipsum dolor sit.</div>
+          <div class="prince text-black" style="font-weight: 800;">Narxi: 300000 so'm</div>
         </div>
         <div>
-          <q-btn flat round icon="event" />
-          <!-- <q-btn
-            size=12px
-            color="blue-grey-1"
+          <!-- <q-btn flat round icon="event" /> -->
+          <q-btn
+            size= 15px
+            color="indigo-3"
             no-caps
-            text-color="black"
-            rounded
+            text-color="white"
             glossy
-            label="Sotib olish"
-          /> -->
+            label="Savatga qo'shish"
+            class="btn"
+          />
         </div>
        </div>
       </div>
@@ -49,14 +46,23 @@ const stars = ref(4)
   cursor: pointer;
   max-width: 250px;
   background: rgb(255, 255, 255);
-}
-.my-card:hover{
   -webkit-box-shadow: -4px 5px 40px -10px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: -4px 5px 40px -10px rgba(34, 60, 80, 0.2);
   box-shadow: -4px 5px 40px -10px rgba(34, 60, 80, 0.2);
+
+}
+.my-card:hover{
+  box-shadow: 1px 2px 3px grey;
 }
 a{
   text-decoration: none;
   color: black;
+}
+.prince{
+  margin-top: 8px;
+}
+.btn{
+  width: 100%;
+  margin-top: 10px;
 }
 </style>
