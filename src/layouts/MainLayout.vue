@@ -8,7 +8,7 @@
       <q-toolbar>
         <q-toolbar-title class="row justify-between items-center">
           <router-link to="/" class="black text-h5 text-weight-bold">Gilos.Market</router-link>
-        <router-link to="/search" >
+        <router-link to="/search">
           <q-input v-model="search" filled type="search" class="input_header"  bg-color="indigo-1"  color="white">
           <template v-slot:append>
           <q-icon name="search" />
