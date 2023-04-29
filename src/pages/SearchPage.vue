@@ -1,12 +1,15 @@
 <template>
-  <div >
-    <Card/>
+  <div class="q-px-lg">
+    <Card :products = "store.searchPanel"/>
   </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
 import Card from 'src/components/card.vue';
+import {useCounterStore} from '../stores/index'
+  const store = useCounterStore()
+   store.GETPRODUCTS()
 </script>
 
 <style lang="css" scoped>
