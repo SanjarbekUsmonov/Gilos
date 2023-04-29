@@ -1,42 +1,34 @@
 <template>
-    <div class="q-gutter-md row justify-between">
-      <div class="my-card" v-for="card in 8" :key="card">
-        <q-img
-          style="height: 250px"
-          src="https://images.uzum.uz/cetug62vtie1lhbghhn0/main_page_banner.jpg"
-        />
+  <div class="q-gutter-md row justify-between">
+    <div class="my-card" v-for="card in products" :key="card">
+      <q-img style="height: 250px" :src="card.img" />
 
-       <div class="q-pa-md">
+      <div class="q-pa-md">
         <div>
           <div class="row no-wrap items-center">
-            <div class="col text-h6 ellipsis" style="font-weight: 700;">Ko'ylak</div>
+            <div class="col text-h6 ellipsis" style="font-weight: 700;">{{ card.name }}</div>
           </div>
-          <q-rating v-model="stars" :max="5" size="22px"/>
+          <q-rating v-model="stars" :max="5" size="22px" />
         </div>
 
         <div>
-          <div style="font-weight: 600;" class="text-grey-7">Lorem ipsum dolor sit.</div>
-          <div class="prince text-black" style="font-weight: 800;">Narxi: 300000 so'm</div>
+          <div style="font-weight: 600;" class="text-grey-7">{{ card.info }}</div>
+          <div class="prince text-black" style="font-weight: 800;">Narxi: {{ card.prince }}</div>
         </div>
         <div>
           <!-- <q-btn flat round icon="event" /> -->
-          <q-btn
-            size= 15px
-            color="indigo-3"
-            no-caps
-            text-color="white"
-            glossy
-            label="Savatga qo'shish"
-            class="btn"
-          />
+          <q-btn size=15px color="indigo-3" no-caps text-color="white" glossy label="Savatga qo'shish" class="btn" />
         </div>
-       </div>
       </div>
     </div>
+  </div>
 </template>
 <script setup>
 import { ref } from "vue"
+import {useCounterStore} from "../stores/index"
+const store = useCounterStore()
 const stars = ref(4)
+ defineProps({products:Array})
 </script>
 
 <style lang="css" scoped>
@@ -51,17 +43,21 @@ const stars = ref(4)
   box-shadow: -4px 5px 40px -10px rgba(34, 60, 80, 0.2);
 
 }
-.my-card:hover{
+
+.my-card:hover {
   box-shadow: 1px 2px 3px grey;
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
 }
-.prince{
+
+.prince {
   margin-top: 8px;
 }
-.btn{
+
+.btn {
   width: 100%;
   margin-top: 10px;
 }
