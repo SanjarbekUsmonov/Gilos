@@ -1,13 +1,13 @@
 <template>
   <div class="section row  row  justify-center items-center content-center">
-      <div class="container q-pt-md row justify-between">
-          <div class="carusel">
-            <info-carusel/>
-          </div>
-          <div class="info">
-            <info-text/>
-          </div>
+    <div class="container q-pt-md row justify-between">
+      <div class="carusel">
+        <info-carusel />
       </div>
+      <div class="info">
+        <info-text />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,22 +18,24 @@ import infoText from '../components/infoText';
 </script>
 
 <style lang="css" scoped>
-.container{
+.container {
   width: 90%;
   height: auto;
   margin: 0 auto;
 }
-.carusel{
+
+.carusel {
   width: 45%;
   height: 410px;
   /* background: red; */
 }
-.info{
+
+.info {
   width: 50%;
   height: 410px;
   /* background: yellow; */
 }
-.section{
+
+.section {
   height: 91vh;
-}
-</style>
+}</style>
