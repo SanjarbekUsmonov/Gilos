@@ -1,0 +1,77 @@
+<template>
+  <div class="products">
+    <products />
+  </div>
+  <div class="column">
+    <div class="text-h4 q-ml-xl q-mt-lg" style="font-weight: 600">
+      Savat: <span class="text-grey">{{ counter }} mahsulot</span>
+    </div>
+    <div class="container">
+      <div
+        class="contend__card q-mt-md q-pa-lg row"
+        v-for="card in 4"
+        :key="card"
+      >
+        <div class="contend__card-img">
+          <q-img
+            src="https://images.uzum.uz/cgvqseng49devoaefqmg/t_product_540_high.jpg#1682855725621"
+            alt=""
+          />
+        </div>
+        <div class="contend__card-texts q-pa-md">
+          <div class="row justify-between items-center content-center">
+            <div class="content__card-name">
+              Sovun Fax Apple & Avacado, 70 g, 5 dona
+            </div>
+            <q-btn text-color="red" label="x" />
+          </div>
+          <div class="row row justify-between items-center content-center">
+            <div><span class="text-grey-7">Sotuvchi:</span> Sweethome</div>
+            <div
+              class="info-amount-active bg-indigo-1 row justify-between items-center content-center"
+            >
+              <q-btn @click="piniaStore.dec()" color="red" glossy label="-" />
+              <strong>{{ piniaStore.counter }}</strong>
+              <q-btn @click="piniaStore.inc()" color="green" glossy label="+" />
+            </div>
+            <div><strong>10 000 so'm</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import products from "../components/products";
+import { ref } from "vue";
+import { useCounterStore } from "../stores/index";
+const piniaStore = useCounterStore();
+const counter = ref(1);
+</script>
+
+<style scoped>
+.products {
+  margin: 0px 40px;
+}
+.container {
+  width: 94%;
+  /* height: 400px; */
+  margin: 0 auto;
+  /* margin-top: 20px; */
+}
+.contend__card {
+  width: 70%;
+  height: 160px;
+  /* background-color: aqua; */
+  border: 1px solid grey;
+}
+.contend__card-img {
+  width: 10%;
+  height: 100%;
+}
+.contend__card-texts {
+  width: 90%;
+  height: 100%;
+}
+</style>
