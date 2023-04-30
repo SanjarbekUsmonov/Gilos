@@ -13,6 +13,7 @@ const routes = [
       { path: '/Smartfonlar', component: () => import('pages/Smartfonlar.vue') },
       { path: '/Elektronika', component: () => import('pages/Elektronika.vue') },
       { path: '/BrendKiyimlar', component: () => import('pages/BrendKiyim.vue') },
+      { path: '/Korzinka', component: () => import('pages/KorzinkaPage.vue') },
     ]
   },
 
