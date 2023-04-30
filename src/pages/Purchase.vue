@@ -1,4 +1,7 @@
 <template>
+  <div class="products">
+       <products/>
+    </div>
   <div class="section row  row  justify-center items-center content-center">
     <div class="container q-pt-md row justify-between">
       <div class="carusel">
@@ -7,6 +10,9 @@
       <div class="info">
         <info-text />
       </div>
+      <div class="q-mt-xl">
+        <card :products="store.purchaseCard"/>
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +20,13 @@
 <script setup>
 import infoCarusel from '../components/infoCarusel';
 import infoText from '../components/infoText';
+import card from '../components/card'
+import products from '../components/products'
+import {useCounterStore} from '../stores/index'
+const store = useCounterStore()
+store.GETPRODUCTS()
+
+
 
 </script>
 
@@ -37,5 +50,9 @@ import infoText from '../components/infoText';
 }
 
 .section {
-  height: 91vh;
-}</style>
+  height: auto;
+}
+.products{
+  margin: 0px 40px;
+}
+</style>
