@@ -5,12 +5,14 @@ import axios from 'axios'
 const API_URL = "http://bazarcom.pythonanywhere.com";
 export const useCounterStore = defineStore('store', {
   state: () => ({
-  cotegory:  [],
+  counter: 1,
+  cotegory: [],
   boys: [],
   womans: [],
   children: [],
   smartphones: [],
-  searchPanel: []
+  searchPanel: [],
+  purchaseCard: []
   }),
 
   getters: {
@@ -31,7 +33,18 @@ export const useCounterStore = defineStore('store', {
    async GETPRODUCTS(){
       let appProducts = await axios.get("http://bazarcom.pythonanywhere.com/products/")
       this.searchPanel = [...appProducts.data]
+      this.purchaseCard = [...appProducts.data]
       console.log(this.searchPanel)
+   },
+   inc(){
+      if(this.counter < 10){
+        this.counter++
+      }
+   },
+   dec(){
+    if(this.counter > 1){
+      this.counter--
+    }
    }
   },
 
