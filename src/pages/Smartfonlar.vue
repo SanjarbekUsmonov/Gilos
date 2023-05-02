@@ -15,7 +15,7 @@
   import products from '../components/products.vue'
   import {useCounterStore} from '../stores/index'
   const store = useCounterStore()
-  store.GetAPI()
+  store.getApi()
 </script>
 
 <style lang="scss" scoped>
