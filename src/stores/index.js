@@ -1,25 +1,25 @@
 import { defineStore, createPinia } from 'pinia';
-import {store} from 'quasar/wrappers'
+import { store } from 'quasar/wrappers'
 import axios from 'axios'
 
 const API_URL = "http://bazarcom.pythonanywhere.com";
 export const useCounterStore = defineStore('store', {
   state: () => ({
-  counter: 1,
-  cotegory: [],
-  boys: [],
-  womans: [],
-  children: [],
-  smartphones: [],
-  searchPanel: [],
-  purchaseCard: []
+    counter: 1,
+    cotegory: [],
+    boys: [],
+    womans: [],
+    children: [],
+    smartphones: [],
+    searchPanel: [],
+    purchaseCard: []
   }),
 
   getters: {
   },
 
   actions: {
-   async GetAPI(){
+    async getApi() {
       let appInfo = await axios.get("http://bazarcom.pythonanywhere.com/category/");
       this.cotegory = appInfo.data;
       //console.log(this.cotegory);
@@ -29,23 +29,23 @@ export const useCounterStore = defineStore('store', {
       this.smartphones = this.cotegory[3].products
       console.log(this.boys)
 
-   },
-   async GETPRODUCTS(){
+    },
+    async getProducts() {
       let appProducts = await axios.get("http://bazarcom.pythonanywhere.com/products/")
       this.searchPanel = [...appProducts.data]
       this.purchaseCard = [...appProducts.data]
       console.log(this.searchPanel)
-   },
-   inc(){
-      if(this.counter < 10){
+    },
+    inc() {
+      if (this.counter < 10) {
         this.counter++
       }
-   },
-   dec(){
-    if(this.counter > 1){
-      this.counter--
+    },
+    dec() {
+      if (this.counter > 1) {
+        this.counter--
+      }
     }
-   }
   },
 
 });
