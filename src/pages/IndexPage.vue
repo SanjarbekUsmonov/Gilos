@@ -5,13 +5,19 @@
     <boys />
     <div class="clothes q-pa-md">
       <router-link to="/BrendKiyimlar">
-        <q-img style="cursor: pointer" src="https://images.uzum.uz/cetufm0l08k0o9qhg7d0/main_page_banner.jpg" />
+        <q-img
+          style="cursor: pointer"
+          src="https://images.uzum.uz/cetufm0l08k0o9qhg7d0/main_page_banner.jpg"
+        />
       </router-link>
     </div>
     <smartphones />
     <div class="clothes q-pa-md">
       <router-link to="/Elektronika">
-        <q-img style="cursor: pointer" src="https://images.uzum.uz/cetug62vtie1lhbghhn0/main_page_banner.jpg" />
+        <q-img
+          style="cursor: pointer"
+          src="https://images.uzum.uz/cetug62vtie1lhbghhn0/main_page_banner.jpg"
+        />
       </router-link>
     </div>
     <womens />
@@ -26,9 +32,9 @@ import Smartphones from "../components/smartphones";
 import Womens from "../components/womens";
 import Childern from "../components/childern";
 import products from "../components/products";
-import {useCounterStore} from '../stores/index'
-const store = useCounterStore()
-store.GetAPI()
+import { useCounterStore } from "../stores/index";
+const store = useCounterStore();
+store.getApi();
 </script>
 
 <style lang="css" scoped>
