@@ -10,6 +10,8 @@ export const useCounterStore = defineStore('store', {
     boys: [],
     womans: [],
     children: [],
+    brendKiyimlar: [],
+    elektonika: [],
     smartphones: [],
     searchPanel: [],
     purchaseCard: []
@@ -26,7 +28,9 @@ export const useCounterStore = defineStore('store', {
       this.boys = this.cotegory[0].products;
       this.womans = this.cotegory[1].products;
       this.children = this.cotegory[2].products;
-      this.smartphones = this.cotegory[3].products
+      this.smartphones = this.cotegory[3].products;
+      this.brendKiyimlar = this.cotegory[4].products;
+      this.elektonika = this.cotegory[5].products
       console.log(this.boys)
 
     },
