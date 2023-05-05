@@ -6,15 +6,15 @@ const API_URL = "http://bazarcom.pythonanywhere.com";
 export const useCounterStore = defineStore('store', {
   state: () => ({
     counter: 1,
-    cotegory: [],
-    boys: [],
-    womans: [],
-    children: [],
-    brendKiyimlar: [],
-    elektonika: [],
-    smartphones: [],
-    searchPanel: [],
-    purchaseCard: []
+    cotegory: null,
+    boys: null,
+    womans: null,
+    children: null,
+    brendKiyimlar: null,
+    elektonika: null,
+    smartphones: null,
+    searchPanel: null,
+    purchaseCard: null
   }),
 
   getters: {
