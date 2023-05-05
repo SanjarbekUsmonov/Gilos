@@ -7,11 +7,7 @@
       Savat: <span class="text-grey">{{ counter }} mahsulot</span>
     </div>
     <div class="container">
-      <div
-        class="contend__card q-mt-md q-pa-lg row"
-        v-for="card in 4"
-        :key="card"
-      >
+      <div class="contend__card q-pa-lg row" v-for="card in 4" :key="card">
         <div class="contend__card-img">
           <q-img
             src="https://images.uzum.uz/cgvqseng49devoaefqmg/t_product_540_high.jpg#1682855725621"
@@ -38,6 +34,7 @@
           </div>
         </div>
       </div>
+      <button>Rasmiylashtirish</button>
     </div>
   </div>
 </template>
@@ -64,7 +61,7 @@ const counter = ref(1);
   width: 70%;
   height: 160px;
   /* background-color: aqua; */
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 .contend__card-img {
   width: 10%;
