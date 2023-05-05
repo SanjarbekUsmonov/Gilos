@@ -1,30 +1,33 @@
 <template>
   <div>
     <div class="products">
-      <products/>
+      <products />
     </div>
-   <div class="container">
-    <h3>Brend kiyimlari...</h3>
+    <div class="container">
+      <h3>Brend kiyimlari...</h3>
       <div class="q-px-lg">
-        <card/>
+        <card :products="store.brendKiyimlar" />
       </div>
-   </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-  import card from '../components/card.vue';
-  import products from '../components/products.vue'
+import card from "../components/card.vue";
+import products from "../components/products.vue";
+import { useCounterStore } from "../stores/index";
+const store = useCounterStore();
+store.getProducts();
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
   padding: 20px;
 }
-h3{
+h3 {
   padding-left: 13px;
 }
-.products{
+.products {
   margin: 0px 40px;
 }
 </style>
