@@ -1,6 +1,12 @@
 <template>
   <div class="q-gutter-md row justify-between">
-    <div class="my-card" v-for="card in products" :key="card">
+    <router-link
+      :to="'/p/' + card.id"
+      class="my-card"
+      v-for="card in products"
+      :key="card"
+      @click="store.get(card.id)"
+    >
       <q-img style="height: 250px" :src="card.img" />
 
       <div class="q-pa-md">
@@ -35,15 +41,15 @@
           /></router-link>
         </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
 import { useCounterStore } from "../stores/index";
-useCounterStore();
+const stoere = useCounterStore();
 const stars = ref(4);
-defineProps({ products: Array });
+const props = defineProps({ products: Array });
 </script>
 
 <style lang="css" scoped>
