@@ -1,28 +1,15 @@
 <template>
   <div>
-    <q-carousel
-      swipeable
-      animated
-      v-model="slide"
-      thumbnails
-      infinite
-    >
-      <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
-      <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
-      <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
-      <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+    <q-carousel swipeable animated v-model="slide" thumbnails infinite>
+      <q-carousel-slide :name="1" :img-src="props.products.img" />
     </q-carousel>
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-
-export default {
-  setup () {
-    return {
-      slide: ref(1)
-    }
-  }
-}
+<script setup>
+import { ref } from "vue";
+// import { useCounterStore } from "../stores/index";
+// store.useCounterStore();
+const props = defineProps({ products: Object });
+const slide = ref(1);
 </script>

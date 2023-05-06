@@ -47,7 +47,7 @@
 <script setup>
 import { ref } from "vue";
 import { useCounterStore } from "../stores/index";
-const stoere = useCounterStore();
+const store = useCounterStore();
 const stars = ref(4);
 const props = defineProps({ products: Array });
 </script>
