@@ -10,7 +10,7 @@
           class="container q-pt-md row justify-between"
         >
           <div class="carusel">
-            <info-carusel />
+            <info-carusel :products="store.product" />
           </div>
           <div class="info">
             <info-text :products="store.product" />
