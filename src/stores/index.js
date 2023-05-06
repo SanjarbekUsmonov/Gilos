@@ -10,11 +10,13 @@ export const useCounterStore = defineStore('store', {
     boys: null,
     womans: null,
     children: null,
-    brendKiyimlar: null,
-    elektonika: null,
+    //brendKiyimlar: null,
+    // elektonika: null,
     smartphones: null,
     searchPanel: null,
-    purchaseCard: null
+    purchaseCard: null,
+    product: null,
+    cotegory_products: null
   }),
 
   getters: {
@@ -29,8 +31,8 @@ export const useCounterStore = defineStore('store', {
       this.womans = this.cotegory[1].products;
       this.children = this.cotegory[2].products;
       this.smartphones = this.cotegory[3].products;
-      this.brendKiyimlar = this.cotegory[4].products;
-      this.elektonika = this.cotegory[5].products
+      // this.brendKiyimlar = this.cotegory[4].products;
+      // this.elektonika = this.cotegory[5].products
       console.log(this.boys)
 
     },
@@ -49,7 +51,28 @@ export const useCounterStore = defineStore('store', {
       if (this.counter > 1) {
         this.counter--
       }
+    },
+    async get_Api_Product(id) {
+      let apiProducts = await axios.get(
+        "http://bazarcom.pythonanywhere.com/products/" + id + "/"
+      );
+      this.product = apiProducts.data;
+    },
+    async get_Api_Category() {
+      let apiCategory = await axios.get(
+        "http://bazarcom.pythonanywhere.com/category/" +
+        this.product.category_id +
+        "/"
+      );
+      this.cotegory_products = apiCategory.data.products
+    },
+    get(id) {
+      this.get_Api_Product(id).then(async () => {
+        this.get_Api_Category()
+        this.counter = 1
+      })
     }
+
   },
 
 });
