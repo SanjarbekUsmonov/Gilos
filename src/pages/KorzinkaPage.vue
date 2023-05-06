@@ -6,7 +6,7 @@
     <div class="text-h4 q-ml-xl q-mt-lg" style="font-weight: 600">
       Savat: <span class="text-grey">{{ counter }} mahsulot</span>
     </div>
-    <div class="container">
+    <div class="container bg-grey">
       <div class="contend__card q-pa-lg row" v-for="card in 4" :key="card">
         <div class="contend__card-img">
           <q-img
@@ -26,15 +26,40 @@
             <div
               class="info-amount-active bg-indigo-1 row justify-between items-center content-center"
             >
-              <q-btn @click="piniaStore.dec()" color="red" glossy label="-" />
+              <q-icon
+                name="remove_circle_outline "
+                size="22px"
+                class="i1 q-ml-md"
+                @click="piniaStore.dec()"
+              />
+              <!-- <q-btn
+
+                text-color="red"
+                glossy
+                label="-"
+              /> -->
               <strong>{{ piniaStore.counter }}</strong>
-              <q-btn @click="piniaStore.inc()" color="green" glossy label="+" />
+              <q-icon
+                name="add_circle_outline "
+                size="22px"
+                class="i2 q-mr-md"
+                @click="piniaStore.inc()"
+              />
+              <!-- <q-btn
+                style="font-size: 10px"
+
+                text-color="green"
+                glossy
+                label="+"
+              /> -->
             </div>
             <div><strong>10 000 so'm</strong></div>
           </div>
         </div>
       </div>
-      <button>Rasmiylashtirish</button>
+      <div class="btn q-pa-md">
+        <q-btn color="green" glossy label="Rasmiylashtirish" />
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +73,12 @@ const counter = ref(1);
 </script>
 
 <style scoped>
+.i1:active {
+  color: red;
+}
+.i2:active {
+  color: rgb(45, 200, 45);
+}
 .products {
   margin: 0px 40px;
 }
@@ -70,5 +101,11 @@ const counter = ref(1);
 .contend__card-texts {
   width: 90%;
   height: 100%;
+}
+.btn {
+  width: 100%;
+  height: 80px;
+  background-color: blue;
+  margin: 0 auto;
 }
 </style>
