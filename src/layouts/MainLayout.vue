@@ -32,8 +32,16 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-let search = ref("");
+import { ref, watch } from "vue";
+import { useCounterStore } from "../stores/index";
+const store = useCounterStore();
+store.getProducts();
+let search = ref(null);
+watch(search, () => {
+  store.searchPanel = store.purchaseCard.filter((product) => {
+    return product.name.toLowerCase().includes(search.value.toLowerCase());
+  });
+});
 </script>
 <style scoped>
 .header {
@@ -48,3 +56,10 @@ let search = ref("");
   margin: 10px;
 }
 </style>
+
+
+<!-- watch(search,()=>{
+  store.search_product = store.products.filter((product) =>{
+   return  product.name.toLowerCase().includes(search.value.toLowerCase())
+  });
+}) -->
