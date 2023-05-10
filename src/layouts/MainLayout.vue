@@ -20,7 +20,9 @@
               </template>
             </q-input>
           </router-link>
-          <q-btn flat round icon="event" color="white" />
+          <router-link to="/Korzinka"
+            ><q-btn flat round icon="event" color="white"
+          /></router-link>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

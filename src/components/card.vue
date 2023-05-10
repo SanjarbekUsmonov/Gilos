@@ -1,7 +1,7 @@
 <template>
   <div class="q-gutter-md row justify-between">
     <router-link
-      :to="'/p/' + card.id"
+      :to="'/p/' + card.id + '/'"
       class="my-card"
       v-for="card in products"
       :key="card"
@@ -29,16 +29,16 @@
         </div>
         <div>
           <!-- <q-btn flat round icon="event" /> -->
-          <router-link to="/Korzinka"
-            ><q-btn
-              size="15px"
-              color="indigo-3"
-              no-caps
-              text-color="white"
-              glossy
-              label="Savatga qo'shish"
-              class="btn"
-          /></router-link>
+          <q-btn
+            @click="store.addKorzinka(card)"
+            size="15px"
+            color="indigo-3"
+            no-caps
+            text-color="white"
+            glossy
+            label="Savatga qo'shish"
+            class="btn"
+          />
         </div>
       </div>
     </router-link>

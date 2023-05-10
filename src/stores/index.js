@@ -16,7 +16,8 @@ export const useCounterStore = defineStore('store', {
     searchPanel: null,
     purchaseCard: null,
     product: null,
-    cotegory_products: null
+    cotegory_products: null,
+    korzinka_product: [],
   }),
 
   getters: {
@@ -38,8 +39,8 @@ export const useCounterStore = defineStore('store', {
     },
     async getProducts() {
       let appProducts = await axios.get("http://bazarcom.pythonanywhere.com/products/")
-      this.searchPanel = [...appProducts.data]
-      this.purchaseCard = [...appProducts.data]
+      this.searchPanel = [...appProducts.data];
+      this.purchaseCard = [...appProducts.data];
       console.log(this.searchPanel)
     },
     inc() {
@@ -71,8 +72,16 @@ export const useCounterStore = defineStore('store', {
         this.get_Api_Category()
         this.counter = 1
       })
-    }
+    },
 
+    addKorzinka(product) {
+      let params = {
+        quantity: 1,
+        total: product.prince,
+      }
+      this.korzinka_product.push(Object.assign(product, params))
+      console.log(this.korzinka_product);
+    }
   },
 
 });

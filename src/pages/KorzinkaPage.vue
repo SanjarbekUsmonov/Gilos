@@ -4,25 +4,22 @@
   </div>
   <div class="column">
     <div class="text-h4 q-ml-xl q-mt-lg" style="font-weight: 600">
-      Savat: <span class="text-grey">{{ counter }} mahsulot</span>
+      Savat: <span class="text-grey">{{ piniaStore.counter }} mahsulot</span>
     </div>
     <div class="container bg-grey">
-      <div class="contend__card q-pa-lg row" v-for="card in 4" :key="card">
+      <div class="contend__card q-pa-lg row" v-for="card in 1" :key="card">
         <div class="contend__card-img">
-          <q-img
-            src="https://images.uzum.uz/cgvqseng49devoaefqmg/t_product_540_high.jpg#1682855725621"
-            alt=""
-          />
+          <q-img :src="piniaStore.img" alt="" />
         </div>
         <div class="contend__card-texts q-pa-md">
           <div class="row justify-between items-center content-center">
             <div class="content__card-name">
-              Sovun Fax Apple & Avacado, 70 g, 5 dona
+              {{ piniaStore.info }}
             </div>
-            <q-btn text-color="red" label="x" />
+            <q-btn text-color="red" label="Delete" no-caps />
           </div>
           <div class="row row justify-between items-center content-center">
-            <div><span class="text-grey-7">Sotuvchi:</span> Sweethome</div>
+            <div><span class="text-grey-7">Sotuvchi:</span> Nomalum</div>
             <div
               class="info-amount-active bg-indigo-1 row justify-between items-center content-center"
             >
@@ -53,7 +50,10 @@
                 label="+"
               /> -->
             </div>
-            <div><strong>10 000 so'm</strong></div>
+            <div>
+              <strong>{{ piniaStore.prince }}</strong>
+            </div>
+            <div>Umumiy narxi: <strong>20000 so'm</strong></div>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ import products from "../components/products";
 import { ref } from "vue";
 import { useCounterStore } from "../stores/index";
 const piniaStore = useCounterStore();
-const counter = ref(1);
+piniaStore.getProducts();
 </script>
 
 <style scoped>
